@@ -1,0 +1,51 @@
+#include <UZU.h>
+#define on(x) output_low(x)
+#define off(x) output_high(x)
+#define dl_time 36
+int8 cnt=0;
+void init();
+void main()
+{
+   setup_wdt(WDT_ON);
+   setup_wdt(WDT_576MS|WDT_DIV_16);      //~36.0 ms reset
+   init();
+
+   while(TRUE)
+   {
+      while(Start) //Wait Start
+      {
+         restart_wdt();
+      }
+      //Start
+      cnt =0;
+      while((Contact)&&(cnt<dl_time))
+      {
+      restart_wdt();
+      delay_ms(1);
+      cnt++;
+      }
+      if(cnt==dl_time) //Het thoi gian giu cham
+      {
+         on(Out1); //Bat relay
+         on(Out5); //bat den do
+      }
+      else
+      {
+         off(Out1);
+         on(Out6); //bat den xanh
+      }
+      while(!Start)
+      {
+         restart_wdt();
+      }
+      init();
+   }
+
+}
+
+void init()
+{
+   off(Out1);
+   off(Out5);
+   off(Out6);
+}

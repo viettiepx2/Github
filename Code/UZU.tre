@@ -1,0 +1,11 @@
+ÀÄUZU
+   ÃÄMAIN  0/147  Ram=0
+   ³  ÃÄ@cinit1  (Inline)  Ram=0
+   ³  ÃÄinit  0/14  Ram=0
+   ³  ÃÄ@delay_ms1  0/22  Ram=1
+   ³  ÀÄinit  0/14  Ram=0
+   ÀÄincomming_rs485  0/90  Ram=2
+      ÃÄ@GETCH_BIU_1  (Inline)  Ram=0
+      ÃÄrs485_add_to_temp  0/12  Ram=3
+      ÃÄrs485_add_to_temp  0/12  Ram=3
+      ÀÄrs485_add_to_temp  0/12  Ram=3

@@ -1,0 +1,11 @@
+Pseudo Code
+Program start
+Turn off all the light and relay
+wait the  Start sw is turned on
+when the Start sw turned on, the UZU is powered
+If in interval time (36ms) the Contact must be connected then it is a good UZU
+else It is a bad UZU
+With the good UZU, turn the green light on
+With the bad UZU, turn the red light and the relay on
+wait the Start sw is turned off
+reset system

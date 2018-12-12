@@ -1,0 +1,57 @@
+
+ROM used:   336/4096 (8%)
+            336/4096 (8%) including unused fragments
+
+            0.1 Average locations per line
+            0.6 Average locations per statement
+
+RAM used:   73/254 (29%) at main() level
+            79/254 (31%) worst case
+
+Stack used: 0 worst case (0 in main + 0 for interrupts)
+Stack size: 8
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+   54    31   5  UZU.c
+   35     0   0  UZU.h
+  727     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F690.h
+ 1352   359  59  ..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
+   32     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+  435   129  21  ..\..\..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+   28     0   0  ..\..\..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+  298    89  15  rs485.c
+----- -----
+ 2961   608 Total
+
+Page ROM  %  RAM    Vol Diff  Functions:
+---- --- --- ---    --- ----  ----------
+0     22   7    1             @delay_ms1
+ Inline         0     48  1.1  @GETCH_BIU_1
+0     12   4    3    118  3.9  rs485_add_to_temp
+0     90  27    2   1153 10.9  incomming_rs485
+0    147  44    0    613  6.2  MAIN
+0     14   4    0     48  1.1  init
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               5
+    Statements              608
+    Comments                1008
+    Volume (V)              2561
+    Difficulty (D)          23.3
+    Effort to implement (E) 59749
+    Time to implement (T)   55 minutes
+    Est Delivered Bugs (B)  1
+    Cyclomatic Complexity   10
+    Maintainability (MI)    60
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00032    47  0  
+00033-007FF   285  1712  
+00800-00FFF     0  2048  
+
+
+

@@ -1,0 +1,51 @@
+#include <UZU.h>
+#define on(x) output_low(x)
+#define off(x) output_high(x)
+#define dl_time 36
+int8 cnt=0;
+void init();
+void main()
+{
+   setup_wdt(WDT_ON);
+   setup_wdt(WDT_576MS|WDT_DIV_16);      //~36.0 ms reset
+   init();
+
+   while(TRUE)
+   {
+      while(Start) //Wait Start
+      {
+         restart_wdt();
+      }
+      //Start
+      cnt =0;
+      while((Contact)&&(cnt<dl_time))
+      {
+      restart_wdt();
+      delay_ms(1);
+      cnt++;
+      }
+      if(cnt==dl_time) //Over delay time, it means the uzu was damaged
+      {
+         on(Out1); //turns the relay on
+         on(Out5); //turns the red light
+      }
+      else //it is a good uzu
+      {
+         off(Out1); //keeps the relay off
+         on(Out6); //turn the green light
+      }
+      while(!Start)  //waits Start switch off
+      {
+         restart_wdt();
+      }
+      init(); // Reinits system.
+   }
+
+}
+
+void init()
+{
+   off(Out1);
+   off(Out5);
+   off(Out6);
+}
